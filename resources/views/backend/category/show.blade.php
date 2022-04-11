@@ -18,7 +18,7 @@
             </div>
 
             <a href="{{ route('category.destroy',$categories->id) }}" class="btn btn-danger">Delete</a>
-            <a href="" class="btn btn-success">Edit</a>
+            <a href="{{ route('category.edit',$categories->id) }}" class="btn btn-success">Edit</a>
             <a href="{{ route('category.index') }}" class="btn btn-primary">Back</a>
         </div>
     </div>

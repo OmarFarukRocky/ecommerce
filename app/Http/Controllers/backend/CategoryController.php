@@ -80,7 +80,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::find($id);
+       return view('backend.category.edit',compact('categories'));
     }
 
     /**
@@ -92,7 +93,28 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'category_name'=>'required',
+            'new_category_photo'=>'image'
+        ]);
+
+            Category::find($id)->update([
+                'category_name'=>$request->category_name,
+            ]);
+
+        if($request->hasFile('new_category_photo')){
+            $new_image_path = time().'-'.Auth::id().'.'.$request->new_category_photo->extension();
+            //delete old photo
+            unlink(public_path('uploads/category_photos/'.Category::find($id)->image_path));
+            //new photo upload
+            $img = Image::make($request->new_category_photo)->resize(100,100);
+            $img->save(public_path('uploads/category_photos/'.$new_image_path));
+
+            Category::find($id)->update([
+                'image_path'=>$new_image_path
+            ]);
+        }
+        return back()->with('successfull','Category Updated Successfully');
     }
 
     /**
