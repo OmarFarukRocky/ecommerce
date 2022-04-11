@@ -6,7 +6,7 @@
     <div class="col-xl-6 col-lg-6">
         <div class="card ">
             <div class="card-header">
-                <h4 class="card-title">Edit Category</h4>
+                <h4 class="card-title">Edit Category ({{ $categories->category_name }})</h4>
                
             </div>
             <div class="card-body">
