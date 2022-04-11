@@ -4,7 +4,7 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Recent Payments Queue</h4>
+                <h4 class="card-title">Category List <strong> Total ({{ $categories->count() }})</strong></h4>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -36,7 +36,11 @@
                                         </button>
                                         <div class="dropdown-menu">
                                             <a class="dropdown-item" href="#">Edit</a>
-                                            <a class="dropdown-item" href="#">Delete</a>
+                                            <form action="{{ route('category.destroy', $category->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="dropdown-item" type="submit">Delete</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </td>
