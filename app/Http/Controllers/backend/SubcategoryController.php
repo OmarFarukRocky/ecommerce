@@ -46,6 +46,12 @@ class SubcategoryController extends Controller
           'sub_category_name'=>'required',
           'sub_category_photo'=>'required|image'
       ]);
+
+      if(Subcategory::where('category_id',$request->category_id)->where('subcategory_name',$request->sub_category_name)->exists()){
+          return back()->with('successfull','Sub category must be uniqid');
+      }
+
+   
      $image_path = time().uniqid().'.'.$request->sub_category_photo->extension();
      //dd($image_path);
      $img = Image::make($request->sub_category_photo)->resize(100,100);
