@@ -68,7 +68,8 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $categories = Category::find($id);
+       return view('backend.category.show',compact('categories'));
     }
 
     /**

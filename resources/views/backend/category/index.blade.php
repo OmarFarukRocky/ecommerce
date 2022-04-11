@@ -36,6 +36,7 @@
                                         </button>
                                         <div class="dropdown-menu">
                                             <a class="dropdown-item" href="#">Edit</a>
+                                            <a class="dropdown-item" href="{{ route('category.show',$category->id) }}">View</a>
                                             <form action="{{ route('category.destroy', $category->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
