@@ -16,16 +16,29 @@
             </li>
 
 
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                <i class="flaticon-381-television"></i>
-                <span class="nav-text">Category</span>
-            </a>
-            <ul aria-expanded="false">
-                <li><a href="{{ route('category.index') }}">List Category</a></li>
-                <li><a href="{{ route('category.create') }}">Create Category</a></li>
-                <li><a href="./app-profile.html">Sub Category list</a></li>                 
-            </ul>
-        </li>
+            <li>
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-381-television"></i>
+                    <span class="nav-text">Category</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{ route('category.index') }}">List Category</a></li>
+                    <li><a href="{{ route('category.create') }}">Create Category</a></li>
+                                    
+                </ul>
+            </li>
+
+            <li>
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-381-television"></i>
+                    <span class="nav-text">Sub Category</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{ route('subcategory.index') }}">List Sub Category</a></li>
+                    <li><a href="{{ route('subcategory.create') }}">Create Sub Category</a></li>
+                                    
+                </ul>
+            </li>
       </ul>       
     </div>
 </div>

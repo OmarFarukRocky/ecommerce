@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\backend\CategoryController;
+use App\Http\Controllers\backend\SubcategoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('category',CategoryController::class);
+Route::resource('subcategory',SubcategoryController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
