@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\SubcategoryController;
+use App\Http\Controllers\backend\UserController;
+use App\Http\Controllers\DeleteMarkallController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -19,8 +21,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+ Route::delete('deleteMarkall',[DeleteMarkallController::class,'deleteMarkall'])->name('deleteMarkall');
+
 Route::resource('category',CategoryController::class);
 Route::resource('subcategory',SubcategoryController::class);
-Auth::routes();
 
+Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

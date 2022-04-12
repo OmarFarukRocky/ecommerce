@@ -10,6 +10,7 @@ use Image;
 
 class CategoryController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -17,6 +18,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        
         $categories = Category::get();
        return view('backend.category.index',['categories'=>$categories]);
     }
