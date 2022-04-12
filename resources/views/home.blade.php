@@ -67,10 +67,7 @@
                                                     @method('DELETE')
                                                     <button class="dropdown-item" type="submit">Delete</button>
                                                 </form>
-                                                <form action="" method="POST">
-                                                    @csrf                                                  
-                                                    <button class="dropdown-item" type="submit">Send Email</button>
-                                                </form>
+                                               
                                             </div>
                                         </div>
                                     </td>
