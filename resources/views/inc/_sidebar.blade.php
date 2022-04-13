@@ -7,16 +7,16 @@
                 </a>
                
             </li>
-
             <li>
-                <a class="has-arrow ai-icon" href="" aria-expanded="false">
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-television"></i>
                     <span class="nav-text">User</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{ route('home') }}">User List</a></li>                                                 
+                    <li><a href="{{ route('showUserList') }}">User list</a></li>                   
                 </ul>
             </li>
+           
 
             
             <li>

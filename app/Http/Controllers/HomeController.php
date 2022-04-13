@@ -24,8 +24,30 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home',[
-            'users'=> User::latest()->get()
+        return view('home');
+    }
+
+    public function showUserList() 
+    {
+        return view('backend.users.index',[
+            'users'=>User::latest()->paginate(10)
         ]);
     }
+
+    public function usersdestroy($id)
+    {
+        User::find($id)->delete();
+        return back();
+    }
+
+    public function deleteMarkall(Request $request)
+    {
+      // dd($request->check);
+       foreach($request->check as $id){
+            User::find($id)->delete();
+       }
+
+       return back();
+    }
+
 }
